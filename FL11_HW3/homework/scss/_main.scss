@@ -1,0 +1,230 @@
+@mixin highlight($color) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color;
+  height: 10px;
+  z-index: -1;
+}
+
+@mixin button($color) {
+  padding: 12px 35px;
+  background-color: $color;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+%base-layout {
+  width: 80%;
+  margin: 0 auto;
+}
+
+%centered-flex {
+  display: flex;
+  align-items: center;
+}
+
+%round-border {
+  border-radius: 5px;
+}
+
+$font-weights: ("regular": 400, "medium": 600, "bold": 700);
+@mixin font-weights($weight) {
+  font-weight: map-get($font-weights, $weight);
+}
+
+body {
+  max-width: $base__max-width;
+  margin: 0 auto;
+  font-family: $font__source-sans-pro;
+  background: $bg;
+}
+
+.header {
+  background-size: cover;
+  background: url("./../img/" + $header__bg) no-repeat center;
+  border-radius: 0 0 350px 0;
+  color: $header__color;
+
+  &-wrap {
+    @extend %base-layout;
+  }
+
+  &_heading {
+    width: 40%;
+    font-size: 55px;
+    line-height: 60px;
+    font-family: $font__hind;
+    @include font-weights("medium");
+    margin: 45px 0;
+
+    position: relative;
+    z-index: 1;
+
+    &:after {
+      content: '';
+      @include highlight($highlight__color);
+      width: 232px;
+      height: 15px;
+      bottom: 10px;
+    }
+  }
+
+  &_text {
+    width: 37%;
+    margin-bottom: 33px;
+  }
+
+  &_button {
+    @include button($button__color);
+    margin-bottom: 150px;
+  }
+
+}
+
+.landing-logo {
+  @extend %centered-flex;
+  text-align: center;
+
+  img {
+    margin-right: 7px;
+  }
+
+  p {
+    font-family: $font__hind;
+    @include font-weights("medium");
+    font-size: 19px;
+    line-height: 20px;
+  }
+
+  span {
+    display: block;
+    @include font-weights("regular");
+    font-size: 11px;
+    line-height: 12px;
+  }
+}
+
+.section {
+  @extend %base-layout;
+  text-align: center;
+
+  &_text {
+    margin: 25px 0;
+    font-size: 36px;
+    @include font-weights("medium");
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    color: $title__color;
+
+    &:after {
+      content: '';
+      @include highlight($highlight__color);
+      width: 160px;
+      left: 188px;
+      bottom: 5px;
+    }
+  }
+
+}
+
+.section_banner {
+  @extend %centered-flex;
+  @extend %round-border;
+  text-align: left;
+  position: relative;
+  top: 55px;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px 90px;
+  background: $banner__gradient;
+
+  &_button {
+    @include button($button__color);
+  }
+
+  &_heading {
+    position: relative;
+    font-size: 24px;
+    @include font-weights("bold");
+    margin: 0 0 15px 0;
+    z-index: 1;
+    color: $banner-heading__color;
+
+    &:after {
+      content: '';
+      @include highlight($highlight__color);
+      left: 95px;
+      width: 55px;
+    }
+  }
+
+  &_text {
+    color: $content__color;
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+.section_card {
+  @extend %round-border;
+  box-sizing: border-box;
+  width: 32%;
+  padding: 20px;
+  text-align: center;
+  background-color: $card__bg;
+  color: $content__color;
+
+  img {
+    width: 100%;
+    height: auto;
+    @extend %round-border;
+  }
+
+  &_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+  }
+
+  &_heading {
+    font-size: 24px;
+    @include font-weights("medium");
+    margin: 15px 0 5px 0;
+    color: $card__head-color;
+
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
+
+  &_underline {
+    @include highlight($highlight__color);
+  }
+
+  &_text {
+    font-size: 13px;
+  }
+}
+
+.footer {
+  padding: 90px 0 50px;
+  background-color: $footer__color;
+  color: $content__color;
+  font-size: 14px;
+
+  &-wrap {
+    @extend %centered-flex;
+    justify-content: space-between;
+    @extend %base-layout;
+  }
+
+  &_text {
+    width: 28%;
+  }
+}

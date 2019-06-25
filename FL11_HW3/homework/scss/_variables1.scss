@@ -1,0 +1,29 @@
+// palette (http://chir.ag/projects/name-that-color)
+$color__white-solid: #fff;
+$color__charade-approx: #21232e;
+$color__eastern-blue-approx: #149fc6;
+$color__sunset-orange-approx: #fd4e33;
+$color__limeade-approx: #699801;
+$color__buddha-gold-approx: #cc9a01;
+$color__ghost-approx: #bfc2cd;
+$color__charade-approx: #21232e;
+
+// fonts
+$font__fallback: sans-serif;
+$font__source-sans-pro: 'Source Sans Pro', $font__fallback;
+$font__hind: 'Hind', $font__fallback;
+$font__freska: 'Fresca', $font__fallback;
+
+$base__max-width: 1280px;
+$bg: $color__white-solid;
+$highlight__color: $color__eastern-blue-approx;
+$header__bg: 'm-h-day.jpg';
+$header__color: $color__charade-approx;
+$title__color: $color__charade-approx;
+$button__color: $color__limeade-approx;
+$content__color: $color__ghost-approx;
+$card__bg: $color__charade-approx;
+$card__head-color: $color__white-solid;
+$banner-heading__color: $color__charade-approx;
+$banner__gradient: linear-gradient(to right, $color__limeade-approx, $color__eastern-blue-approx 100%);
+$footer__color: $color__charade-approx;
