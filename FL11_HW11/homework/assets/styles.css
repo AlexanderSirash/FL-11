@@ -1,0 +1,104 @@
+button {
+    font: inherit;
+    font-size: 50px;
+    padding: 0;
+    color: #00b5f9;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:disabled {
+    font-size: 50px;
+    color: rgba(118, 118, 118, 0.32);
+    cursor: default;
+}
+
+h1 {
+    text-align: center;
+}
+
+#root {
+    padding: 0 20px 20px 20px;
+    color: #00b5f9;
+}
+
+.new-action {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.action-button-wrapper {
+    width: 8%;
+    text-align: center;
+}
+
+.new-action_label {
+    width: 92%;
+}
+
+.new-action_input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 17px;
+    border: 1px solid rgba(118, 118, 118, 0.32);
+    border-radius: 5px;
+}
+
+.material-icons {
+    color: rgba(0, 181, 249, 0.51);
+}
+
+.material-icons.plus-button {
+    font-size: inherit;
+    color: inherit;
+}
+
+.main {
+    border-top: 5px solid rgba(0, 144, 214, 0.13);
+}
+
+.to-do-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+.list-element {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-element.disabled .item .material-icons {
+    display: none;
+}
+
+.list-element label {
+    margin-right: 5px;
+}
+
+.item-change {
+    display: none;
+}
+
+.item {
+    display: flex;
+}
+
+.delete-button {
+    width: 3%;
+    text-align: start;
+}
+
+/* edit */
+.edit .item,
+.edit .delete-button {
+    display: none;
+}
+.edit .item-change {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
